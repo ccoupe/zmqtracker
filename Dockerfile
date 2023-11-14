@@ -1,0 +1,13 @@
+FROM ccoupe/opencv-cuda:4.6.0-11.7.0-devel-ubuntu
+
+WORKDIR /usr/local/lib/zmqtracker/
+#RUN apt update && apt -y upgrade 
+#RUN apt install -y build-essential libssl-dev python3-dev python3 \
+#python3-pip python3-venv 
+
+COPY . /usr/local/lib/zmqtracker
+
+RUN pip3 install install opencv-contrib-python-headless \
+websockets imutils rpyc imagezmq gputil paho-mqtt
+    
+CMD "/usr/local/lib/zmqtracker/docker-x86.sh" 

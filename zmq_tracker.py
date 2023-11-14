@@ -271,8 +271,10 @@ def main():
   global sock, addr, have_cuda
   # process args - port number, 
   ap = argparse.ArgumentParser()
-  ap.add_argument("-c", "--conf", required=True, type=str,
-    help="path and name of the json configuration file")
+  ap.add_argument("-c", "--conf", type=str, 
+      required=False,
+      default="/config.json",
+      help="path and name of the json configuration file")
   args = vars(ap.parse_args())
   
   # logging setup
