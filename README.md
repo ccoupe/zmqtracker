@@ -18,7 +18,9 @@ Stoic docker
 - `nvidia-docker build -t ccoupe/zmqtracker .`
 - `nvidia-docker run -it -d -p4783:4783 -p4795:4795 \
 -v ~/Projects/iot/zmqtracker/stoic.json:/config.json \
+--restart=always \
 --name=zmqtracker -e TZ=America/Boise ccoupe/zmqtracker
 `
 
 Bronco docker
+- `docker run -it -d -p4783:4783 -p4795:4795 -v ~/Projects/iot/zmqtracker/bronco.json:/config.json --restart=always --name=zmqtracker -e TZ=America/Boise ccoupe/zmqtracker`
